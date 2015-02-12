@@ -25,5 +25,5 @@ public class AP_7 {
         System.out.println(new AP_7().formTree(arr, 0, arr.length-1).value);
     }
 
-    
+
 }
