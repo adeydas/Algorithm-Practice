@@ -8,6 +8,12 @@ public class AP_26 {
     private int leftDepth;
     private int rightDepth;
 
+    /**
+     * BST insert augmented with AVL balance
+     * @param start
+     * @param root
+     * @param value
+     */
     public void BSTInsert(Node start, Node root, int value) {
         if (root == null) return;
 
@@ -32,6 +38,12 @@ public class AP_26 {
         }
     }
 
+    /**
+     * Replace a matching child
+     * @param fixedNode
+     * @param compareNode
+     * @param replaceNode
+     */
     public void replace(Node fixedNode, Node compareNode , Node replaceNode) {
         if (fixedNode.left == compareNode) {
             fixedNode.left = replaceNode;
@@ -40,12 +52,23 @@ public class AP_26 {
         }
     }
 
+    /**
+     * Find the minimum in a BST
+     * @param root
+     * @return
+     */
     public Node findMinimum(Node root) {
         if (root.left == null && root.right == null)
             return root;
         return findMinimum(root.left);
     }
 
+    /**
+     * BST delete augmented with AVL balance
+     * @param start
+     * @param root
+     * @param value
+     */
     public void BSTDelete(Node start, Node root, Node value) {
         Node parent = new Node();
         parent = findParent(root, value, parent);
@@ -76,6 +99,11 @@ public class AP_26 {
         }
     }
 
+    /**
+     * Find depth of tree
+     * @param root
+     * @return
+     */
     public int depth(Node root) {
         if (root == null) return 0;
         int left = depth(root.left);
@@ -85,6 +113,11 @@ public class AP_26 {
         return left > right? ++left : ++right;
     }
 
+    /**
+     * Check whether reorganization is required
+     * @param root
+     * @return
+     */
     public boolean isReOrganizingRequired(Node root) {
         if (root == null) return false;
         int left = depth(root.left);
@@ -96,6 +129,13 @@ public class AP_26 {
             return false;
     }
 
+    /**
+     * Find the parent of a node
+     * @param root
+     * @param element
+     * @param parent
+     * @return
+     */
     public Node findParent(Node root, Node element, Node parent) {
         if (root == null) return null;
 
@@ -116,6 +156,11 @@ public class AP_26 {
 
     }
 
+    /**
+     * Single left rotate
+     * @param start
+     * @param root
+     */
     public void leftRotation(Node start, Node root) {
         Node rightChild = root.right;
         Node rightGrandChild = root.right.right;
@@ -127,6 +172,11 @@ public class AP_26 {
         BSTInsert(start, root.right.right.right, (Integer)rightChild.value);
     }
 
+    /**
+     * Single right rotate
+     * @param start
+     * @param root
+     */
     public void rightRotation(Node start, Node root) {
 
         if (root == null || root.left == null || root.left.left == null) return;
@@ -141,6 +191,11 @@ public class AP_26 {
         BSTInsert(start, root.left.left.right, (Integer)root.value);
     }
 
+    /**
+     * Rotate logic
+     * @param start
+     * @param root
+     */
     public void reOrganize(Node start, Node root) {
         boolean isRequired = isReOrganizingRequired(root);
         if (isRequired) {
@@ -172,12 +227,21 @@ public class AP_26 {
         }
     }
 
+    /**
+     * Print inOrder
+     * @param root
+     */
     public void printInOrder(Node root) {
         if (root == null) return;
         printInOrder(root.left);
         System.out.print(root.value + " ");
         printInOrder(root.right);
     }
+
+    /**
+     * Print preorder
+     * @param root
+     */
     public void printPreOrder(Node root) {
         if (root == null) return;
         System.out.print(root.value + " ");
