@@ -5,52 +5,47 @@ package com.abhishek;
  */
 public class AP_42 {
 
+    //O(n2) implementation
     public String findLargestPalindrome(String string) {
+        if (string.length() > 2) {
+            char[] carr = string.toCharArray();
 
-        if (string == null)
-            return null;
+            int maxPalindromeLength = Integer.MIN_VALUE;
+            int globalBegin = 0;
+            int globalEnd = 0;
 
-        if (string.length() == 1)
-            return string;
-
-        char[] cArr = string.toCharArray();
-
-        int start = 0; //start from the 0th index
-        int end = cArr.length-1; //end at l-1
-
-        String result = "";
-        int begin = -1;
-        int finish = -1;
-
-        while (start < end) {
-            char atStart = cArr[start];
-            char atEnd = cArr[end];
-
-            if (atStart == atEnd) {
-                if (begin == -1 && finish == -1) {
-                    begin = start;
-                    finish = end;
+            for (int i=3; i<carr.length; i++) {
+                int mid = i;
+                int begin = i-1;
+                int end = i+1;
+                while (begin >= 0 && end <= carr.length-1) {
+                    if (carr[begin] != carr[end])
+                        break;
+                    begin--;
+                    end++;
                 }
-            } else {
-                begin = -1;
-                finish = -1;
+                int palindromeLength = (end-begin)+1;
+                if (palindromeLength > maxPalindromeLength) {
+                    maxPalindromeLength = palindromeLength;
+                    globalBegin = begin+1;
+                    globalEnd = end-1;
+                }
             }
-            start = start+1;
-            end = end-1;
+
+            String result = "";
+
+            for (int i=globalBegin; i<=globalEnd; i++) {
+                result += Character.toString(carr[i]);
+            }
+
+            return result;
+        } else {
+            return string;
         }
-
-        if (begin == -1 && finish == -1)
-            return null;
-
-        for (int i=begin; i<=finish; i++) {
-            result += Character.toString(cArr[i]);
-        }
-
-        return result;
     }
 
     public static void main(String... args) {
-        String str = "DABCBAK";
+        String str = "RACECAR";
 
         AP_42 ap_42 = new AP_42();
         System.out.println(ap_42.findLargestPalindrome(str));
