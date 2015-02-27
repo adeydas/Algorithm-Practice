@@ -2,6 +2,9 @@ package com.abhishek;
 
 /**
  * http://jira.abhis.ws/browse/AP-52
+ * O(lg n) time solution.
+ * Recurse and find the levels of the two nodes.
+ * Compare the levels.
  */
 public class AP_52 {
 
@@ -9,10 +12,14 @@ public class AP_52 {
 
     public boolean areCousins(Node root, Node node1, Node node2) {
 
-        findLevel(node1, root, 0);
+        Node r = root;
+
+        findLevel(node1, r, 0);
         int node1level = level;
+
         level=0;
-        findLevel(node2, root, 0);
+        r= root;
+        findLevel(node2, r, 0);
         int node2level = level;
 
         if (node1level == node2level)
@@ -30,11 +37,10 @@ public class AP_52 {
             return;
         }
 
-        if (node == root)
-            return;
-
-        findLevel(node, root.left, level++);
-        findLevel(node, root.right, level++);
+        int levelLeft = level + 1;
+        int levelRight = level + 1;
+        findLevel(node, root.left, levelLeft);
+        findLevel(node, root.right, levelRight);
     }
 
     public static void main(String... args) {
