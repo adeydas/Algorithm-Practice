@@ -3,8 +3,7 @@ package com.abhishek;
 /**
  * Created by Abhishek on 3/24/2015.
  */
-public class GraphNode {
-
-    public int value;
+public class Graph {
+    public int V, E;
     public GraphEdge[] edges;
 }
