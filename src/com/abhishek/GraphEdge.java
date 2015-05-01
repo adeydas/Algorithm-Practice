@@ -5,7 +5,15 @@ package com.abhishek;
  * Website: adeydas.com
  */
 public class GraphEdge {
-    public GraphNode start;
-    public GraphNode end;
+    public int src, dest;
+
     public int edgeWeight;
+    public GraphNode end, start;
+
+    public GraphEdge(int src, int dest) {
+        this.src = src;
+        this.dest = dest;
+    }
+
+    public GraphEdge(){}
 }
