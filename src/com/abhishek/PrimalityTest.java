@@ -3,8 +3,8 @@ package com.abhishek;
 import java.util.Random;
 
 /**
- * Created by abhishek on 5/1/15.
- * Website: adeydas.com
+ * https://softengr2015.files.wordpress.com/2015/05/img_0015.pdf
+ * https://softengr2015.files.wordpress.com/2015/05/img_0016.pdf
  */
 public class PrimalityTest {
 
