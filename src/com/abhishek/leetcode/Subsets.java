@@ -1,7 +1,7 @@
 package com.abhishek.leetcode;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -15,6 +15,8 @@ public class Subsets {
         if (nums == null || nums.length == 0)
             return null;
 
+        Arrays.sort(nums);
+
         for (int i=0; i<nums.length; i++) {
             int focus = nums[i];
             List<Integer> f = new ArrayList<>();
@@ -27,7 +29,7 @@ public class Subsets {
                 List<Integer> temp = ret.get(j);
                 ArrayList<Integer> temp2 = (ArrayList<Integer>) ((ArrayList)temp).clone();
                 temp2.add(focus);
-                Collections.sort(temp2);
+//                Collections.sort(temp2);
                 tempInt.add(temp2);
                 j=j+1;
             }
