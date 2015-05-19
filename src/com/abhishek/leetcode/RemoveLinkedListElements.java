@@ -12,7 +12,7 @@ import java.util.List;
  Given: 1 --> 2 --> 6 --> 3 --> 4 --> 5 --> 6, val = 6
  Return: 1 --> 2 --> 3 --> 4 --> 5
 
- https://abhi.im/leetcode-remove-all-elements-from-a-linked-list-that-have-value-val/
+ Explanation: https://abhi.im/leetcode-remove-all-elements-from-a-linked-list-that-have-value-val/
  */
 public class RemoveLinkedListElements extends TestCase {
     public ListNode removeElements(ListNode head, int val) {
