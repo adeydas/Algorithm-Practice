@@ -1,6 +1,8 @@
 Algorithm Practice
 =================
 
+[![Join the chat at https://gitter.im/adeydas/Algorithm-Practice](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/adeydas/Algorithm-Practice?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A collection of algorithms from different sources.
 
 Why is it here?
