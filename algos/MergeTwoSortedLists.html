@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Merge Two Sorted Lists</title>
+
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <link rel="stylesheet" href="../stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Algorithm practice</h1>
+        <p>Practice algorithms for job interviews.</p>
+
+        <p class="view"><a href="https://github.com/adeydas/Algorithm-Practice">View the Project on GitHub <small>adeydas/Algorithm-Practice</small></a></p>
+
+
+        <ul>
+          <li><a href="http://algorithms.abhis.ws">Go <strong>Home</strong></a></li>
+          <li><a href="https://github.com/adeydas/Algorithm-Practice">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/adeydas/Algorithm-Practice/issues">Raise <strong>Issue</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Merge Two Sorted Lists</h1>
+        
+        <p><strong>Question</strong>: Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</p>
+        
+        <p>We can follow a simple approach to this problem: pick any one list, iterate through the next list till you reach an element greater than the current one. Add the greater element to the end of all these smaller elements. Now move on to the next element and do the same. Time complexity would be O(m+n), where m and n are the sizes of the lists.</p>
+
+        <p>A cavaet I found while coding this problem in Java is that I you assign a node of a list to the final list and then assign a "next" element, the list is overwritten. To avoid this, a way could be to move the list to its next node (See lines 23-24).</p>
+
+        <p><a href="https://github.com/adeydas/Algorithm-Practice/blob/d332bf6954b60787579b78ac3d3c0622ea529c6a/src/com/abhishek/leetcode/MergeTwoSortedLists.java">Code here</a></p>
+        
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/adeydas">adeydas</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
