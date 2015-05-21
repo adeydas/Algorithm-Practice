@@ -24,6 +24,8 @@ public class RemoveElement {
             }
         }
 
+
+
         return length;
     }
 }
