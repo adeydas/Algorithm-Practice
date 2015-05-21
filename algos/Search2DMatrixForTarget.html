@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Remove duplicates from sorted Linked List</title>
+
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <link rel="stylesheet" href="../stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Algorithm practice</h1>
+        <p>Practice algorithms for job interviews.</p>
+
+        <p class="view"><a href="https://github.com/adeydas/Algorithm-Practice">View the Project on GitHub <small>adeydas/Algorithm-Practice</small></a></p>
+
+
+        <ul>
+          <li><a href="http://algorithms.abhis.ws">Go <strong>Home</strong></a></li>
+          <li><a href="https://github.com/adeydas/Algorithm-Practice">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/adeydas/Algorithm-Practice/issues">Raise <strong>Issue</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Search a sorted 2D array for given target</h1>
+        
+        <p><strong>Question</strong>: Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties: <br />
+
+Integers in each row are sorted from left to right.
+The first integer of each row is greater than the last integer of the previous row. <br />
+For example,
+
+Consider the following matrix: <br />
+
+[<br />
+  [1,   3,  5,  7],<br />
+  [10, 11, 16, 20],<br />
+  [23, 30, 34, 50]<br />
+]<br />
+Given target = 3, return true.</p>
+        
+        <p>From the looks of the question it seems like some kind of a convulated binary search. First we can figure out which row the element would be in (or would not be in any row). Then we can take that row and run a binary search on it. That will give us the result in a time of O(nlogn).</p>
+
+        <p>While selecting the row, make sure to include the target during comparison. For example, consider the following matrix: <br />
+          [ [1], <br />
+            [3] ]<br />
+          If the target was 1, we would need to compare whether the target was smaller than or equal the last element of the second row and greater than the last element of the first row. <br />
+          Conversely, we need to check whether the target is smaller than or equal to the last row.</p> 
+
+
+        <p><a href="https://github.com/adeydas/Algorithm-Practice/blob/d1915dfc306d09ff10cb4b00d174f869ae5806af/src/com/abhishek/leetcode/Search2DMatrix.java">Code here</a></p>
+        
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/adeydas">adeydas</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
