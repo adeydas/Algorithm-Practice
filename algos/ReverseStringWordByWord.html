@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Reverse String word by word</title>
+
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <link rel="stylesheet" href="../stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Algorithm practice</h1>
+        <p>Practice algorithms for job interviews.</p>
+
+        <p class="view"><a href="https://github.com/adeydas/Algorithm-Practice">View the Project on GitHub <small>adeydas/Algorithm-Practice</small></a></p>
+
+
+        <ul>
+          <li><a href="http://algorithms.abhis.ws">Go <strong>Home</strong></a></li>
+          <li><a href="https://github.com/adeydas/Algorithm-Practice">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/adeydas/Algorithm-Practice/issues">Raise <strong>Issue</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Reverse String word by word</h1>
+        
+        <p><strong>Question</strong>: Given an input string, reverse the string word by word.<br />
+
+For example,<br />
+Given s = "the sky is blue",<br />
+return "blue is sky the".</p>
+        
+        <p>This problem can be done in several ways. One of them is to start traversing from the end and put every character encountered in a stack till a space is reached. When a space is reached, one of the following two things can happen:</p>
+        <ol>
+          <li>There are no elements in the stack. In that case, move on.</li>
+          <li>There are elements in the stack. In that case, pop all elements till the stack is empty and add it to a resultant string.</li>
+        </ol>
+
+        <p><a href="https://github.com/adeydas/Algorithm-Practice/blob/172e9db78740a68a853bed8f1c74c922f3785466/src/com/abhishek/leetcode/ReverseWordsInString.java">Code here</a></p>
+        
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/adeydas">adeydas</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
