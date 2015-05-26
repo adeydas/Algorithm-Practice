@@ -13,4 +13,4 @@ This is a collection of interesting problem I have come across over time. This r
 What else is there?
 ===================
 
-Explanations to some solutions here: http://algorithms.abhis.ws/
+Explanations to some solutions here: http://abhis.ws/algorithms/
