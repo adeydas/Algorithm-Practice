@@ -57,7 +57,7 @@ public class Trie extends TestCase {
         }
     }
 
-    
+
 
     // Returns if the word is in the trie.
     public boolean search(String word) {
@@ -126,5 +126,6 @@ public class Trie extends TestCase {
 
         assertTrue(search("help") && !search("heck") && !search("hec"));
     }
+   
 }
 
