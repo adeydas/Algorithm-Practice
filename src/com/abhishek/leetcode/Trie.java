@@ -126,6 +126,6 @@ public class Trie extends TestCase {
 
         assertTrue(search("help") && !search("heck") && !search("hec"));
     }
-   
+
 }
 
