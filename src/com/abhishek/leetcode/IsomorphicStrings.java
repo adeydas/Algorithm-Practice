@@ -2,6 +2,7 @@ package com.abhishek.leetcode;
 
 import junit.framework.TestCase;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,20 +28,24 @@ public class IsomorphicStrings extends TestCase {
         if (s == null || s.length() == 0 || t == null || t.length() == 0)
             return true;
 
-        Map<Character, Character> mp = new HashMap<>();
+        return isIsomorphicOneSide(s,t) && isIsomorphicOneSide(t,s);
 
+
+    }
+
+    private boolean isIsomorphicOneSide(String s, String t) {
+        char[] mp = new char[256];
+        Arrays.fill(mp, '*');
         for (int i=0; i<s.length(); i++) {
-            char c1 = s.charAt(i);
-            char c2 = t.charAt(i);
-
-            if (mp.containsKey(c1) && mp.get(c1) != c2)
-                return false;
-            if (!mp.containsKey(c1) && mp.containsValue(c2))
-                return false;
-
-            mp.put(c1, c2);
+            int index = (int)s.charAt(i);
+            if (mp[index] == '*') {
+                mp[index] = t.charAt(i);
+            } else {
+                if (mp[index] != t.charAt(i)) {
+                    return false;
+                }
+            }
         }
-
         return true;
     }
 
